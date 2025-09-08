@@ -1,0 +1,55 @@
+version: '3.8'
+
+x-common-env: &common-env
+  env_file:
+    - .env
+
+networks:
+ rustdesk-net:
+   external: false
+
+services:
+  rustdesk-full:
+    #build: .
+    #command: /app/apimain
+    #command: /app/start-services.sh
+    container_name: rustdesk-full
+    image: yjiang/rustdesk-full:latest
+    volumes:
+      #- ./realese/conf:/app/conf
+      - ./data:/app/data
+    ports:
+       - 11114:21114
+       - 11115:21115
+       - 11116:21116
+       - 11116:21116/udp
+       - 11117:21117
+       - 11118:21118
+       - 11119:21119
+    networks:
+       - rustdesk-net
+    restart: unless-stopped
+    #depends_on:
+    #  - hbbr
+    #  - hbbs
+    <<: *common-env
+
+  #hbbs:
+  #  build: .
+  #  command: /app/hbbs -k /app/ 
+  #  volumes:
+  #    - ./data/server:/root
+  #  network_mode: "host"
+  #  restart: unless-stopped
+  #  depends_on:
+  #    - hbbr
+  #  <<: *common-env
+
+  #hbbr:
+  #  build: .
+  #  command: /app/hbbs -k /app/
+  #  volumes:
+  #    - ./data/server:/root
+  #  network_mode: "host"
+  #  restart: unless-stopped
+  #  <<: *common-env

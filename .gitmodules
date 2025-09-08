@@ -1,0 +1,6 @@
+[submodule "rustdesk-api"]
+	path = rustdesk-api
+	url = https://github.com/582033/rustdesk-api
+[submodule "rustdesk-api-web"]
+	path = rustdesk-api-web
+	url = https://github.com/582033/rustdesk-api-web
