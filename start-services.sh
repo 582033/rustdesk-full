@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Ensure data directory exists for sqlite database and keys
+mkdir -p /app/data
+
 # 启动 hbbr 进程
 #/app/hbbr -k /app/key/id_ed25519 &
 /app/hbbr -k _ &
