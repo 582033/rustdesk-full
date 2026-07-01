@@ -61,3 +61,8 @@ docker compose up -d
     ./build-full.sh linux
     ```
 3.  构建完成后，生成的可执行文件将位于 `release` 目录中。
+
+## 使用 docker 构建并运行
+```bash
+    ./build-full.sh linux && docker build . -t rustdesk-full && docker compose down && docker compose up -d
+```

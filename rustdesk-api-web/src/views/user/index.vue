@@ -179,7 +179,7 @@
     const newExpire = base + seconds
     const res = await setExpireTime({ user_id: user.id, expire_at: newExpire }).catch(_ => false)
     if (res && user.status !== ENABLE_STATUS && newExpire > Math.floor(Date.now() / 1000)) {
-      await update({ ...user, status: ENABLE_STATUS }).catch(_ => false)
+      await update({ ...user, expire_at: newExpire, status: ENABLE_STATUS }).catch(_ => false)
     }
     extendLoading.value = false
     if (res) {
