@@ -28,7 +28,7 @@
 在项目根目录下，执行以下命令来构建并启动所有服务：
 
 ```bash
-git clone --recursive https://github.com/rustdesk/rustdesk-full.git
+git clone --recursive https://github.com/520333/rustdesk-full.git
 docker compose up -d
 ```
 
