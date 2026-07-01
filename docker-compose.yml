@@ -14,7 +14,8 @@ services:
     #command: /app/apimain
     #command: /app/start-services.sh
     container_name: rustdesk-full
-    image: yjiang/rustdesk-full:latest
+    #container_name: yjiang/rustdesk-full
+    image: rustdesk-full:latest
     volumes:
       #- ./realese/conf:/app/conf
       - ./data:/app/data
