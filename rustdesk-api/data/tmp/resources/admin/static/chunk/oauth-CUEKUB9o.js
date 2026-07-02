@@ -1,0 +1,1 @@
+import{s as n}from"../entry/index-CQJlSWXd.js";function t(o){return n({url:"/oauth/info",params:o})}function i(o){return n({url:"/oauth/confirm",method:"post",data:o})}function u(o){return n({url:"/oauth/bindConfirm",method:"post",data:o})}export{u as b,i as c,t as i};
